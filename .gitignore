@@ -68,6 +68,10 @@ Binaries/*
 Plugins/*/Binaries/*
 
 # Builds
-Build/*
+Builds/*
 
 Plugins/Developer/RiderLink
+
+# Custom folders 
+JuceLibraryCode/*
+.DS_Store/*
