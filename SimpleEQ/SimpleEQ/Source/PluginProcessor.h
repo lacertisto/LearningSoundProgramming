@@ -66,6 +66,16 @@ public:
 	};
 
 private:
+
+    //alias for use of dsp namespace in project to eliminate usage of nested namespaces and template definitions
+    using Filter = juce::dsp::IIR::Filter<float>;
+    using CutFilter = juce::dsp::ProcessorChain<Filter,Filter,Filter,Filter>;
+    using MonoChain = juce::dsp::ProcessorChain<CutFilter,Filter,CutFilter>;
+
+    //using aliases declare two mono channels to represent stereo
+    MonoChain LeftChain, RightChain;
+
+
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SimpleEQAudioProcessor)
 };
