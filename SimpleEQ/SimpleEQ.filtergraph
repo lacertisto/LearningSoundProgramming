@@ -64,7 +64,7 @@
   <FILTER uid="5" x="0.2175" y="0.5" useARA="0">
     <PLUGIN name="SimpleMBComp" format="VST3" category="Fx" manufacturer="Horns and Hooves LLC"
             version="1.0.0" file="C:\Program Files\Common Files\VST3\SimpleMBComp.vst3"
-            uniqueId="198e52a" isInstrument="0" fileTime="18491b01835" infoUpdateTime="184df11f9ec"
+            uniqueId="198e52a" isInstrument="0" fileTime="18491b01835" infoUpdateTime="184e460b64e"
             numInputs="2" numOutputs="2" isShell="0" hasARAExtension="0"
             uid="e95a2df7"/>
     <STATE>191.VMjLgXK....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVMEUy.Ea0cVZtMEcgQWY9vSRC8Vav8lak4Fc9XCLt3hKt3hKt3hKt3hYRUUSTEETIckVwTjQisVTTgkdEYjKAQjYPQSPWgUdMcjKAQjct3hdA4hKt3hKt3hKtnTUv.UQAslXuk0UXoWUFE0YQcEV77RRC8Vav8lak4Fc9vyKVMEUy.Ea0cVZtMEcgQWY9..</STATE>
@@ -77,11 +77,11 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <FILTER uid="6" x="0.625" y="0.2701612903225806" useARA="0" uiLastX_Normal="68"
-          uiLastY_Normal="54" uiopen_Normal="0">
+  <FILTER uid="6" x="0.625" y="0.2701612903225806" useARA="0" uiLastX_Normal="551"
+          uiLastY_Normal="56" uiopen_Normal="0">
     <PLUGIN name="AudioFilePlayer" format="VST3" category="Fx" manufacturer="Matkat Music LLC"
             version="1.0.0" file="C:\Program Files\Common Files\VST3\AudioFilePlayer.vst3"
-            uniqueId="79fe81c" isInstrument="0" fileTime="18491e230a5" infoUpdateTime="184df11f9ec"
+            uniqueId="79fe81c" isInstrument="0" fileTime="18491e230a5" infoUpdateTime="184e460b64e"
             numInputs="2" numOutputs="2" isShell="0" hasARAExtension="0"
             uid="e95d02c7"/>
     <STATE>344.VMjLg7T....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVMEUy.Ea0cVZtMEcgQWY9vSRC8Vav8lak4Fc9DyMz3BTIISX1UEaho2ZVkUdAAkKAwDUigWRWkEcQ0VTucmUY4BQlUUQLolShUELhsVRxHlXMoWXz0zQicFMFM1azXUVhEEUYk2bFMVcAczUXkzPQU2XsElb3XEVpQiTXYWPGgzbtfFUKkELPY1MEgDUIISX1sVLXc1cFgDUmY0XzEkUYgWPBoTdHMDSlIGaXYWSWoDc5YjX44hKt3hKt3hKt3hKt3hYRUUSTEETIckVwTjQisVTTgkdEYjKAQjYPQSPWgUdMcjKAQjct3hdA4hKt3hKt3hKtnTUv.UQAslXuk0UXoWUFE0YQcEV77RRC8Vav8lak4Fc9vyKVMEUy.Ea0cVZtMEcgQWY9..</STATE>
@@ -94,10 +94,11 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <FILTER uid="7" x="0.61" y="0.4778225806451613" useARA="0">
+  <FILTER uid="8" x="0.6274999999999999" y="0.4193548387096774" useARA="0"
+          uiLastX_Normal="39" uiLastY_Normal="213" uiopen_Normal="0">
     <PLUGIN name="SimpleEQ" format="VST3" category="Fx" manufacturer="yourcompany"
             version="1.0.0" file="C:\Program Files\Common Files\VST3\SimpleEQ.vst3"
-            uniqueId="56be4ea" isInstrument="0" fileTime="184df0e6c30" infoUpdateTime="184df11f9ed"
+            uniqueId="56be4ea" isInstrument="0" fileTime="184e45ade15" infoUpdateTime="184e460b64f"
             numInputs="2" numOutputs="2" isShell="0" hasARAExtension="0"
             uid="e95b5646"/>
     <STATE>191.VMjLgXK....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVMEUy.Ea0cVZtMEcgQWY9vSRC8Vav8lak4Fc9XCLt3hKt3hKt3hKt3hYRUUSTEETIckVwTjQisVTTgkdEYjKAQjYPQSPWgUdMcjKAQjct3hdA4hKt3hKt3hKtnTUv.UQAslXuk0UXoWUFE0YQcEV77RRC8Vav8lak4Fc9vyKVMEUy.Ea0cVZtMEcgQWY9..</STATE>
@@ -110,8 +111,8 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <CONNECTION srcFilter="6" srcChannel="0" dstFilter="7" dstChannel="0"/>
-  <CONNECTION srcFilter="6" srcChannel="1" dstFilter="7" dstChannel="1"/>
-  <CONNECTION srcFilter="7" srcChannel="0" dstFilter="3" dstChannel="0"/>
-  <CONNECTION srcFilter="7" srcChannel="1" dstFilter="3" dstChannel="1"/>
+  <CONNECTION srcFilter="6" srcChannel="0" dstFilter="8" dstChannel="0"/>
+  <CONNECTION srcFilter="6" srcChannel="1" dstFilter="8" dstChannel="1"/>
+  <CONNECTION srcFilter="8" srcChannel="0" dstFilter="3" dstChannel="0"/>
+  <CONNECTION srcFilter="8" srcChannel="1" dstFilter="3" dstChannel="1"/>
 </FILTERGRAPH>
