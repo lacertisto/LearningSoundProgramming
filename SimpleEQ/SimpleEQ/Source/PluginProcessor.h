@@ -129,7 +129,7 @@ private:
 			case Slope_36:
 			{
 				updateCutParams<2>(chain, cutCoefficients);
-                __fallthrough
+				__fallthrough;
 			}
 			case Slope_24:
 			{
@@ -146,6 +146,10 @@ private:
 		}
     }
 
+    void updateLowCutFilters(const ChainSettings& chainSettings);
+	void updateHighCutFilters(const ChainSettings& chainSettings);
+
+    void updateFilters();
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SimpleEQAudioProcessor)
 };
