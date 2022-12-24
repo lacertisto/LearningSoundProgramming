@@ -222,48 +222,48 @@ juce::AudioProcessorValueTreeState::ParameterLayout SimpleEQAudioProcessor::crea
 										 // slider, 1 - skew of slider (manageable parameter for range coverage of slider)
 		20000.f));
 
-    	layout.add(std::make_unique<juce::AudioParameterFloat>(
+    layout.add(std::make_unique<juce::AudioParameterFloat>(
         "Peak Freq",
         "Peak Freq",
-		juce::NormalisableRange<float>(20.f, 20000.f, 1.f, 0.25f),	 // for that method is: 20 - minimal hearing freq, 20000 - max hearing freq, 1 - step of
-										 // slider, 1 - skew of slider (manageable parameter for range coverage of slider)
-		750.f));
+	    juce::NormalisableRange<float>(20.f, 20000.f, 1.f, 0.25f),	 // for that method is: 20 - minimal hearing freq, 20000 - max hearing freq, 1 - step of
+										    // slider, 1 - skew of slider (manageable parameter for range coverage of slider)
+	    750.f));
 
-        layout.add(std::make_unique<juce::AudioParameterFloat>(
+    layout.add(std::make_unique<juce::AudioParameterFloat>(
         "Peak Gain",
         "Peak Gain",
-		juce::NormalisableRange<float>(-24.f, 24.f, 0.5f, 1.f),	 // for that method is: 20 - minimal hearing freq, 20000 - max hearing freq, 1 - step of
-											// slider, 1 - skew of slider (manageable parameter for range coverage of slider)
-		0.f));
+	    juce::NormalisableRange<float>(-24.f, 24.f, 0.5f, 1.f),	 // for that method is: 20 - minimal hearing freq, 20000 - max hearing freq, 1 - step of
+										    // slider, 1 - skew of slider (manageable parameter for range coverage of slider)
+	    0.f));
 
-        layout.add(std::make_unique<juce::AudioParameterFloat>(
+    layout.add(std::make_unique<juce::AudioParameterFloat>(
         "Peak Quality",
         "Peak Quality",
-		juce::NormalisableRange<float>(0.1f, 10.f, 0.05f, 1.f),	// for that method is: 20 - minimal hearing freq, 20000 - max hearing freq, 1 - step of
-										// slider, 1 - skew of slider (manageable parameter for range coverage of slider)
-		1.f));
+	    juce::NormalisableRange<float>(0.1f, 10.f, 0.05f, 1.f),	// for that method is: 20 - minimal hearing freq, 20000 - max hearing freq, 1 - step of
+									    // slider, 1 - skew of slider (manageable parameter for range coverage of slider)
+	    1.f));
 
-        juce::StringArray ChoicesArray;
-		for (int i = 0; i < 4; i++)
-		{
-            //write down the db per Octave values in an string array for audio params
-			juce::String str;
-			str << (12 + i*12);
-			str << " db/Oct";
-			ChoicesArray.add(str);
-        }
+    juce::StringArray ChoicesArray;
+	for (int i = 0; i < 4; i++)
+	{
+        //write down the db per Octave values in an string array for audio params
+		juce::String str;
+		str << (12 + i*12);
+		str << " db/Oct";
+		ChoicesArray.add(str);
+    }
 
-        layout.add(std::make_unique<juce::AudioParameterChoice>(
-            "LowCut Slope",
-            "LowCut Slope",
-            ChoicesArray,
-            0));
+    layout.add(std::make_unique<juce::AudioParameterChoice>(
+        "LowCut Slope",
+        "LowCut Slope",
+        ChoicesArray,
+        0));
 
-		layout.add(std::make_unique<juce::AudioParameterChoice>(
-            "HighCut Slope",
-            "HighCut Slope",
-            ChoicesArray,
-            0));
+	layout.add(std::make_unique<juce::AudioParameterChoice>(
+        "HighCut Slope",
+        "HighCut Slope",
+        ChoicesArray,
+        0));
 
 	return layout;
 }
@@ -310,7 +310,6 @@ void SimpleEQAudioProcessor::updateFilters()
 	updateLowCutFilters(chainSettings);
 	updateHighCutFilters(chainSettings);
 	updatePeakFilter(chainSettings);
-
 }
 
 //==============================================================================
