@@ -15,7 +15,13 @@ SimpleEQAudioProcessorEditor::SimpleEQAudioProcessorEditor (SimpleEQAudioProcess
 {
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
-    setSize (400, 300);
+
+    for (juce::Component* comp : getComps())
+	{
+		addAndMakeVisible(comp);
+    }
+
+    setSize (600, 400);
 }
 
 SimpleEQAudioProcessorEditor::~SimpleEQAudioProcessorEditor()
@@ -35,6 +41,25 @@ void SimpleEQAudioProcessorEditor::paint (juce::Graphics& g)
 
 void SimpleEQAudioProcessorEditor::resized()
 {
-    // This is generally where you'll want to lay out the positions of any
-    // subcomponents in your editor..
+	// This is generally where you'll want to lay out the positions of any
+	// subcomponents in your editor..
+
+	juce::Rectangle<int> bounds = getLocalBounds();
+	juce::Rectangle<int> responseArea = bounds.removeFromTop(bounds.getHeight() * 0.33f);
+	juce::Rectangle<int> lowCutArea = bounds.removeFromLeft(bounds.getWidth() * 0.33f);
+	juce::Rectangle<int> highCutArea = bounds.removeFromRight(bounds.getWidth() * 0.5f); //returns last third of the display
+
+    lowCutFreqSlider.setBounds(lowCutArea.removeFromTop(lowCutArea.getHeight() * 0.5f));
+	lowCutSlopeSlider.setBounds(lowCutArea);
+	highCutFreqSlider.setBounds(highCutArea.removeFromTop(lowCutArea.getHeight() * 0.5f));
+	highCutSlopeSlider.setBounds(highCutArea);
+
+    peakFreqSlider.setBounds(bounds.removeFromTop(bounds.getHeight() * 0.33f));
+	peakGainSlider.setBounds(bounds.removeFromTop(bounds.getHeight() * 0.5f));
+	peakQualitySlider.setBounds(bounds);
+}
+
+std::vector<juce::Component*> SimpleEQAudioProcessorEditor::getComps()
+{
+	return {&peakFreqSlider, &peakGainSlider, &peakQualitySlider, &lowCutFreqSlider, &highCutFreqSlider, &lowCutSlopeSlider, &highCutSlopeSlider};
 }
