@@ -34,6 +34,12 @@ struct ChainSettings
 
 ChainSettings getChainSettings(juce::AudioProcessorValueTreeState& apvts);
 
+//alias for use of dsp namespace in project to eliminate usage of nested namespaces and template definitions
+using Filter = juce::dsp::IIR::Filter<float>;
+using CutFilter = juce::dsp::ProcessorChain<Filter,Filter,Filter,Filter>;
+using MonoChain = juce::dsp::ProcessorChain<CutFilter,Filter,CutFilter>;
+using Coefficients = Filter::CoefficientsPtr;
+
 //==============================================================================
 /**
 */
@@ -90,13 +96,6 @@ public:
 	};
 
 private:
-
-    //alias for use of dsp namespace in project to eliminate usage of nested namespaces and template definitions
-    using Filter = juce::dsp::IIR::Filter<float>;
-    using CutFilter = juce::dsp::ProcessorChain<Filter,Filter,Filter,Filter>;
-    using MonoChain = juce::dsp::ProcessorChain<CutFilter,Filter,CutFilter>;
-    using Coefficients = Filter::CoefficientsPtr;
-
     //using aliases declare two mono channels to represent stereo
     MonoChain leftChain, rightChain;
 
